@@ -1,14 +1,9 @@
 <!DOCTYPE html>
-<?php 
-include "SECRETS.php";
-?>
 <html>
 <head>
-<meta charset="utf-8">
-<title>KFOR Novine</title>
+<title>Potpisana Odluka o Birger Incidentu!</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="styles.css">
-<meta name="description" content="Oficijalne novine KFOR stranke Matematicke gimnazije">
 </head>
 <body>
 <script>
@@ -81,33 +76,25 @@ include "SECRETS.php";
     </ul>
 </div>
 <br>
-<center>
-<h1>
-  Aktuelno u KFOR-u
+<h1 class="naslov">
+N.S: "Nećeš valjda da budeš kao oni uličari što blokiraju"
 </h1>
-<div class="grid-container">
-    <?php
-        $conn = mysqli_connect($DB_HOST, $DB_USER, $DB_PASS, $DB_NAME);
-        mysqli_set_charset($conn, "utf8mb4");
-        if(mysqli_connect_errno()){
-            echo "Failed to connect";
-            die();
-        }
-        $sql = "SELECT * FROM naslovi ORDER BY `id` DESC LIMIT 4";
-        $res = mysqli_execute_query($conn, $sql);
-        while($row = mysqli_fetch_assoc($res)){
-            $slika = $row["slika"];
-            $link = $row["link"];
-            $naslov = $row["naslov"];
-            echo "<a href=" . $link . ">";
-            echo "<div class='vest' style='background-image: url(" . $slika . ");'>";
-            echo "<div class='overlay'>" . $naslov . "</div>";
+<p class="datum">
+    Datum: 29.04.2025.<br>
+</p>
 
-            echo "</div></a>";
-        }
+<p class="tekst">
 
-    ?>
+U ponedeljak 28. aprila 2025. godine, na 1. casu, N. S. je po drugi put kasnila na cas uprkos tome da nam je rekla da dođemo ranije.<br><br>
+
+Trebali smo da imamo pismeni zadatak, N. S. je ispitivala, ovo je drugi put da se ovo dešava u našoj odeljenskoj zajednici. Ovo je neprihvatljivo i ukazatelj na zloupotrebu položaja, i naša organizacija (KFOR) se potrudila da dobijemo zasluženu pravdu.<br><br> 
+
+Podelila je lose ocene. Napala je nas (ne fizički), učenike koji nisu dolazili u školu, jer ona misli da blokade nisu put, i to je kasnije potvrdila izjavom "Nećeš valjda da budeš kao oni uličari što blokiraju". Saznali smo od pouzdanog izvora.<br><br>
+<b>KOMUNIZMA NEĆE BITI!</b>
+</p>
+<div class="image-box">
+    <img class="slika" src="004.png">
+    <div class="image-source">Izvor: MG</div>
 </div>
-  </center>
 </body>
 </html>

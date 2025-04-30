@@ -11,3 +11,4 @@ RewriteRule ^ %{REQUEST_URI}.php [NC,L]
 
 RewriteCond %{THE_REQUEST} /index(\.php)? [NC]
 RewriteRule ^index(\.php)?$ / [R=301,L]
+php_value date.timezone Europe/Belgrade

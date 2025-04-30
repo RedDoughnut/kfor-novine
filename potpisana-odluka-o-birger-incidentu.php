@@ -1,14 +1,9 @@
 <!DOCTYPE html>
-<?php 
-include "SECRETS.php";
-?>
 <html>
 <head>
-<meta charset="utf-8">
-<title>KFOR Novine</title>
+<title>Potpisana Odluka o Birger Incidentu!</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="styles.css">
-<meta name="description" content="Oficijalne novine KFOR stranke Matematicke gimnazije">
 </head>
 <body>
 <script>
@@ -81,33 +76,33 @@ include "SECRETS.php";
     </ul>
 </div>
 <br>
-<center>
-<h1>
-  Aktuelno u KFOR-u
+<h1 class="naslov">
+  Potpisana Odluka o Birger Incidentu!
 </h1>
-<div class="grid-container">
-    <?php
-        $conn = mysqli_connect($DB_HOST, $DB_USER, $DB_PASS, $DB_NAME);
-        mysqli_set_charset($conn, "utf8mb4");
-        if(mysqli_connect_errno()){
-            echo "Failed to connect";
-            die();
-        }
-        $sql = "SELECT * FROM naslovi ORDER BY `id` DESC LIMIT 4";
-        $res = mysqli_execute_query($conn, $sql);
-        while($row = mysqli_fetch_assoc($res)){
-            $slika = $row["slika"];
-            $link = $row["link"];
-            $naslov = $row["naslov"];
-            echo "<a href=" . $link . ">";
-            echo "<div class='vest' style='background-image: url(" . $slika . ");'>";
-            echo "<div class='overlay'>" . $naslov . "</div>";
+<p class="datum">
+    Datum: 22.04.2025.<br>
+</p>
 
-            echo "</div></a>";
-        }
+<p class="tekst">
 
-    ?>
+Dana 8. Aprila 2025. godine potpisana je odluka o ocuvanju tkz "Birger incidenta".<br><br>
+
+Ceo dokument objavili smo u ovim novinama.<br>
+Dokument je potpisan od strane lidera KFOR-a Relje Zloporubovica i generalnog sekretara KFOR-a Davida Tomica.<br>
+Ova odluka je jos jedan korak ka zastiti takozvanog "Birger Incidenta".<br><br>
+
+Izrvsni Odbor KFOR-a (IOK) je demokratski odlucio da se dokument objavi u javnost, da se prosiri odluka da nema vise deljenja poverljivih informacija o incidentu, a takodje i buducim slucajevima.<br><br>
+
+U prilogu skenirani dokument.<br>
+<b>KOMUNIZMA NEĆE BITI!</b>
+</p>
+<div class="image-box">
+    <img class="slika" src="odlukaKFOR1.jpg">
+    <div class="image-source">Izvor: KFOR</div>
 </div>
-  </center>
+<div class="image-box">
+    <img class="slika" src="odlukaKFOR2.jpg">
+    <div class="image-source">Izvor: KFOR</div>
+</div>
 </body>
 </html>
